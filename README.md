@@ -23,6 +23,18 @@ See the documentation for [Deployment](https://aqueduct.io/docs/deploy/).
 ## Recreate this project
 
 ```
-pub global activate aqueduct
-aqueduct create cloud_run_app
+$ pub global activate aqueduct
+$ aqueduct create cloud_run_app
+$ cd cloud_run_app
+
+[add environment variable support]
+[rename bin/main.dart to bin/server.dart]
+[add Dockerfile]
+[build image]
+
+$ gcloud auth login
+$ gcloud config set project myproject-8d802
+$ gcloud builds submit --tag gcr.io/myproject-8d802/helloworld
+$ gcloud config set run/region us-central1
+$ gcloud beta run deploy --image gcr.io/myproject-8d802/helloworld --platform managed
 ```
