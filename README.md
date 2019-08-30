@@ -34,7 +34,8 @@ $ cd cloud_run_app
 
 $ gcloud auth login
 $ gcloud config set project myproject-8d802
-$ gcloud builds submit --tag gcr.io/myproject-8d802/helloworld
 $ gcloud config set run/region us-central1
+
+$ gcloud builds submit --tag gcr.io/myproject-8d802/helloworld
 $ gcloud beta run deploy --image gcr.io/myproject-8d802/helloworld --platform managed
 ```
